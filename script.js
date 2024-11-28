@@ -1,8 +1,6 @@
-// Bar graph data and configuration
-// Select the canvas element for the graph
+
 const ctx = document.getElementById('weekly-schedule').getContext('2d');
 
-// Create the bar graph using Chart.js
 const weeklyScheduleChart = new Chart(ctx, {
     type: 'bar', // Chart type
     data: {
@@ -74,8 +72,9 @@ const weeklyScheduleChart = new Chart(ctx, {
 });
 
 // Function to handle the submission of activity and time
+// probably not gunna have functionality
 function addActivity() {
-    // Get the values from the input fields
+
     const activity = document.getElementById('activity').value;
     const time = parseFloat(document.getElementById('time').value);
     
@@ -86,10 +85,7 @@ function addActivity() {
     
     // Display the entered activity and time in the console for now
     console.log(`Activity: ${activity}, Time Spent: ${time} hours`);
-
-    // You can later implement this to update your graph or save it to a list, etc.
     
-    // Clear the input fields after submission
     document.getElementById('activity').value = '';
     document.getElementById('time').value = '';
 }
