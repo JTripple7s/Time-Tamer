@@ -73,3 +73,25 @@ const weeklyScheduleChart = new Chart(ctx, {
     }
 });
 
+// Function to handle the submission of activity and time
+function addActivity() {
+    // Get the values from the input fields
+    const activity = document.getElementById('activity').value;
+    const time = parseFloat(document.getElementById('time').value);
+    
+    if (!activity || isNaN(time) || time <= 0) {
+        alert("Please enter valid activity and time.");
+        return;
+    }
+    
+    // Display the entered activity and time in the console for now
+    console.log(`Activity: ${activity}, Time Spent: ${time} hours`);
+
+    // You can later implement this to update your graph or save it to a list, etc.
+    
+    // Clear the input fields after submission
+    document.getElementById('activity').value = '';
+    document.getElementById('time').value = '';
+}
+
+

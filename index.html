@@ -14,12 +14,22 @@
     <p>American Indian Student Follows Passion for Animals, Environment</p>
 </div>
 
-<div id="graph-container" style="position: absolute; bottom: 20px; left: 100px; width: 800px; height: 500px;">
+<div id="graph-container">
     <canvas id="weekly-schedule"></canvas>
 </div>
 
 <div id="csusm-logo">
     <img src="images/Official_CSUSM_Logo.jpg" alt="csusm official logo" width="300" height="200">
+</div>
+
+<div id="input-section">
+    <label for="activity">Input:</label>
+    <input type="text" id="activity" name="activity" placeholder="Enter activity name"> 
+
+    <label for="time">Time:</label>
+    <input type="number" id="time" name="time" placeHolder="Enter time in hours">
+
+    <button onclick="addActivity()">Log Activity</button>
 </div>
 
 

@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
@@ -9,33 +9,45 @@ body {
     background: linear-gradient(to right, #248DD2 0%, #FF14E9 100%);
 }
 
-/* Title */
 h1 {
     text-align: center;
     color: #000000;
     margin-bottom: 20px;
 }
 
-/* Style the white box */
+
 #School-News-box {
-    background-color: white; /* White background for the box */
-    color: #333; /* Text color */
-    padding: 20px; /* Inner spacing */
-    border-radius: 32px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 1); /* Subtle shadow for depth */
-    max-width: 400px; /* Limit the width of the box */
+    background-color: white; 
+    color: #333; 
+    padding: 20px; 
+    border-radius: 32px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+    max-width: 500px; 
+    height: 200px;
     text-align: center;
     position: absolute;
     top: 50px;
     left: 300px;
 }
 
+#School-News-box h1{
+    font-family: 'Arial';
+    font-size: 30px;
+    color:#000000
+}
+
+#School-News-box p{
+    font-family: 'Arial';
+    font-size: 20px;
+    color:#000000
+}
+
 #graph-container {
     position: absolute;
-    bottom: 150px;
+    bottom: 20px;
     left: 150px;
-    width: 400px; /* Set width of the graph */
-    height: 300px; /* Set height of the graph */
+    width: 1000px; 
+    height: 525px; 
     /*background-color: rgb(255, 255, 255);*/
     padding: 10px;
     border-radius: 8px;
@@ -45,7 +57,41 @@ h1 {
 #csusm-logo{
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 150px;
     width: 300px;
     height: auto;
+}
+
+#input-section {
+    position: absolute;
+    bottom: 270px;
+    right: 150px;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+}
+
+#input-section input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#input-section button {
+    width: 100%;
+    padding: 10px;
+    background-color: #31cbff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#input-section button:hover {
+    background-color: #1c9bb6;
 }
