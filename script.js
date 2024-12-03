@@ -1,39 +1,43 @@
 
-const ctx = document.getElementById('weekly-schedule').getContext('2d');
+const barChartCtx = document.getElementById('weekly-schedule').getContext('2d');
+const doughnutChartCtx = document.getElementById('activity-donut').getContext('2d');
 
-const weeklyScheduleChart = new Chart(ctx, {
+const weeklyScheduleChart = new Chart(barChartCtx, {
     type: 'bar', // Chart type
     data: {
         labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], // X-axis labels
-        datasets: [{
-            label: 'Hours Spent', // Legend label
-            data: [2, 4, 3, 5, 6, 1, 2], // Y-axis data
-            backgroundColor: [
-                'rgba(31, 203, 255, 1)', // Colors for bars
-                'rgba(31, 203, 255, 1)',
-                'rgba(31, 203, 255, 1)',
-                'rgba(31, 203, 255, 1)',
-                'rgba(31, 203, 255, 1)',
-                'rgba(31, 203, 255, 1)',
-                'rgba(31, 203, 255, 1)'
-            ],
-            borderColor: [
-                'rgba(0, 0, 0, 1)',
-                'rgba(0, 0, 0, 1)',
-                'rgba(0, 0, 0, 1)',
-                'rgba(0, 0, 0, 1)',
-                'rgba(0, 0, 0, 1)',
-                'rgba(0, 0, 0, 1)',
-                'rgba(0, 0, 0, 1)'
-            ],
-            borderWidth: 0
-        }]
+        datasets: [
+            {
+                label: 'Extracurricular', // activity
+                data: [1, 1.5, 2, 1, 2.5, 0, 0], // Hours for activity
+                backgroundColor: 'rgba(31, 203, 255, 1)', // Color for bars
+
+            },
+            {
+                label: 'Study',
+                data: [3, 4, 2, 3.5, 4, 1, 2],
+                backgroundColor: 'rgba(255, 99, 132, 1)', 
+
+            },
+            {
+                label: 'Leisure', 
+                data: [2, 2.5, 3, 1.5, 2, 4, 5],
+                backgroundColor: 'rgba(75, 192, 192, 1)', 
+
+            },
+            {
+                label: 'sleep',
+                data: [8, 8, 8, 8, 8, 8, 8], 
+                backgroundColor: 'rgba(131, 203, 255, 1)', 
+            }
+        ]
     },
     options: {
         responsive: true, // Adjust to container size
         maintainAspectRatio: false, // Allow custom height/width
         scales: {
             y: {
+                
                 beginAtZero: true, // Start Y-axis at 0
                 ticks: {
                     color: 'black',
@@ -41,6 +45,7 @@ const weeklyScheduleChart = new Chart(ctx, {
                 grid: {
                     color: 'rgba(0, 0, 0, 0.2)',
                 },
+                stacked: true,
                 title: {
                     display: true,
                     text: 'Hours Spent', // Y-axis label
@@ -54,6 +59,7 @@ const weeklyScheduleChart = new Chart(ctx, {
                 grid: {
                     color: 'rgba(0, 0, 0, 0)',
                 },
+                stacked: true,
                 title: {
                     display: true,
                     text: 'Days of the Week', // X-axis label
@@ -67,6 +73,34 @@ const weeklyScheduleChart = new Chart(ctx, {
                     color: 'black'
                 }
             }
+        }
+    }
+});
+
+const doughnutChart = new Chart(doughnutChartCtx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Extracurricular', 'Study', 'Leisure', 'sleep'],
+        datasets: [
+            {
+                label: 'Activity Distribution',
+                data: [10, 20, 15, 56], // Total hours for each activity
+                backgroundColor: [
+                    'rgba(31, 203, 255, 1)', // Extracurricular color
+                    'rgba(255, 99, 132, 1)', // Study color
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(131, 203, 255, 1)'  // Leisure color
+                ],
+                hoverOffset: 4 // Adds an offset when hovering
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { labels: { color: 'black' } },
+            tooltip: { enabled: true }
         }
     }
 });

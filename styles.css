@@ -54,6 +54,17 @@ h1 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
 }
 
+#doughnut-container {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    width: 500px; 
+    height: 375px; 
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+}
+
 #csusm-logo{
     position: absolute;
     bottom: 20px;
@@ -93,5 +104,20 @@ h1 {
 }
 
 #input-section button:hover {
+    background-color: #1c9bb6;
+}
+
+#Import button {
+    width: 5%;
+    padding: 5px;
+    background-color: #31cbff;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#Import button:hover {
     background-color: #1c9bb6;
 }
